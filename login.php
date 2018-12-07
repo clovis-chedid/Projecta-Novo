@@ -19,6 +19,9 @@
         }
         body{
           background-image: url('https://www.peakwebstudio.com/wp-content/uploads/2014/09/298711-office.jpg');
+          background-repeat: no-repeat;
+          background-color: #f5f5f5;
+          background-size: cover;
         }
         .background-div{
           height: 40%;
@@ -33,7 +36,7 @@
             width: 60%;
             filter: drop-shadow(8px 8px 10px black);
         }
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 800px) {
           [class*="background-div"]{
             height: 100%;
             background: rgba(255,255,255,0.8);
@@ -43,7 +46,6 @@
             background: rgba(255,255,255,0.9);
 
           }
-          
           .cards{
             width: 90%;
             filter: drop-shadow(8px 8px 10px black);
@@ -52,7 +54,10 @@
             height: device-height;
           }
           body{
-            background-image: url('https://www.peakwebstudio.com/wp-content/uploads/2014/09/298711-office.jpg');
+            background-image: url();
+            background-repeat: no-repeat;
+            background-color: #f5f5f5;
+            background-size: auto;
           }
           .background-img{
             margin-top: 15px;            
@@ -125,8 +130,8 @@
                       </div>
                       <button type="submit" class="btn btn-primary mb-3">Entrar</button>
                     </form>
-                    <a href="/esqueceu_senha.php">Esqueceu sua senha?</a>
-                    <p class="mt-2">Não tem conta?<a href="/esqueceu_senha.php"> Cadastre-se</a></p>
+                    <a href="/Projecta-Novo/esqueceu_senha.php">Esqueceu sua senha?</a>
+                    <p class="mt-2">Não tem conta?<a href="/Projecta-Novo/cadastro.php"> Cadastre-se</a></p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -158,8 +163,8 @@
                       </div>
                       <button type="submit" class="btn btn-primary mb-3">Entrar</button>
                     </form>
-                    <a href="/esqueceu_senha.php">Esqueceu sua senha?</a>
-                    <p class="mt-2">Não tem conta?<a href="/esqueceu_senha.php"> Cadastre-se</a></p>
+                    <a href="/Projecta-Novo/esqueceu_senha.php">Esqueceu sua senha?</a>
+                    <p class="mt-2">Não tem conta?<a href="/Projecta-Novo/cadastro.php"> Cadastre-se</a></p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -191,8 +196,8 @@
                       </div>
                       <button type="submit" class="btn btn-primary mb-3">Entrar</button>
                     </form>
-                    <a href="/esqueceu_senha.php">Esqueceu sua senha?</a>
-                    <p class="mt-2">Não tem conta?<a href="/esqueceu_senha.php"> Cadastre-se</a></p>
+                    <a href="/Projecta-Novo/esqueceu_senha.php">Esqueceu sua senha?</a>
+                    <p class="mt-2">Não tem conta?<a href="/Projecta-Novo/cadastro.php"> Cadastre-se</a></p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
