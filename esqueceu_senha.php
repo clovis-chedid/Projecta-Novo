@@ -43,7 +43,7 @@
                     <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="descricao" required>
                     <small id="descricao" class="form-text text-muted">Preencha o endereço correspondente a conta que deseja recuperar.</small>
                 </div>
-                <button type="submit" name="enviar" class="btn btn-primary btn-block"><B>Enviar</B></button>
+                <button type="submit" class="btn btn-primary btn-block"><B>Enviar</B></button>
             </form>
         </div>
         <div class="card-footer text-center">
@@ -58,7 +58,7 @@
         <div class="card-header border-dark text-center"><b>Recuperação de Senha</b></div>
         <div class="card-body">
             <h5 class="card-title text-success">Sucesso!</h5>
-            <p class="card-text">Foi enviado um email para <b><?php echo $_GET['email'] ?></b>, nele estão contidas instruções para a recuperação de sua senha, caso não veja o email verifique o lixo eletrônico.</p>
+            <p class="card-text">Foi enviado um email para <b><?php echo $_GET['email'] ?></b>, nele estão contidas instruções para a recuperação de sua senha, caso não o veja, verifique o lixo eletrônico.</p>
         </div>
         <div class="card-footer text-center">
             <a role="button" class="btn w-25 btn-outline-primary" href="login.php">Voltar</a>

@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="pt">
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
@@ -35,7 +34,11 @@
   <body>
     <div class="center">
     <div class="card border-dark mb-3 card-form" style="">
-        <div class="card-header border-dark text-center text-white"><b>Cadastro Projecta</b></div>
+        <div class="card-header border-dark text-center text-white">
+        <a role="button" class="btn btn-outline-light btn-sm" href="login.php" style="position: absolute; left: 5px; top: 9px;"><b>Voltar</b></a>
+        <b>Cadastro Projecta</b>
+        
+        </div>
         <div class="card-body">
             <p class="card-text">Campos marcados com <span class="text-danger"><b>*</b></span> são obrigatórios.</p>
             <form>
@@ -98,6 +101,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-block"><B>REGISTRAR</B></button>
             </form>
+        </div>
+        <div class="card-footer text-center">
+            
         </div>
     </div>
     </div>
