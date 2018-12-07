@@ -46,6 +46,9 @@
                 <button type="submit" name="enviar" class="btn btn-primary btn-block"><B>Enviar</B></button>
             </form>
         </div>
+        <div class="card-footer text-center">
+            <a role="button" class="btn w-25 btn-outline-primary" href="login.php">Voltar</a>
+        </div>
     </div>
     </div>
     <?php else: ?> 
