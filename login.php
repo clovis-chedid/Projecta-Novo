@@ -4,70 +4,7 @@
       <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <style>
-        .center {
-          position: absolute;
-          
-          left: 0%;
-          top: 20%;
-          width: 100%;
-          text-align: center;
-          font-size: 18px;
-        }
-        .mb-5 {
-          margin-bottom: ($spacer * .75);
-        }
-        body{
-          background-image: url('https://www.peakwebstudio.com/wp-content/uploads/2014/09/298711-office.jpg');
-          background-repeat: no-repeat;
-          background-color: #f5f5f5;
-          background-size: cover;
-        }
-        .background-div{
-          height: 40%;
-          background: rgba(255,255,255,0.8);
-        }
-        .background-img{
-          position: sticky;
-          margin-bottom: 55px;
-          filter: drop-shadow(8px 8px 10px gray);
-        }
-        .cards{
-            width: 60%;
-            filter: drop-shadow(8px 8px 10px black);
-        }
-        @media only screen and (max-width: 800px) {
-          [class*="background-div"]{
-            height: 100%;
-            background: rgba(255,255,255,0.8);
-          }
-          .col{
-            height: 100%;
-            background: rgba(255,255,255,0.9);
-
-          }
-          .cards{
-            width: 90%;
-            filter: drop-shadow(8px 8px 10px black);
-          }
-          [class*="background-img"]{
-            height: device-height;
-          }
-          body{
-            background-image: url();
-            background-repeat: no-repeat;
-            background-color: #f5f5f5;
-            background-size: auto;
-          }
-          .background-img{
-            margin-top: 15px;            
-          }
-          .background-div{
-          height: 40%;
-          background: rgba(255,255,255,0);
-        }
-        }
-      </style>
+      <link rel="stylesheet" href="css/login.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <title>Projecta :: Acesso</title>
       

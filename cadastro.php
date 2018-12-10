@@ -5,37 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <style>
-        body{
-            background-color: #f5f5f5;
-        }
-        .center {     
-            margin: auto;
-            /* padding: 55px 0; */
-            margin-top: 55px;
-            display: flex;
-            justify-content: center;
-            
-        }
-        .card-form{
-            width: 35%;
-        }
-        .card-header{
-            background-color: #1A4B8EFF;
-        }
-        @media only screen and (max-width: 768px) {
-            .card-form{
-                width: 75%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/cadastro.css">
     <title>Projecta :: Cadastro</title>
   </head>
   <body>
     <div class="center">
-    <div class="card border-dark mb-3 card-form" style="">
+    <div class="card border-dark mb-3 card-form">
         <div class="card-header border-dark text-center text-white">
-        <a role="button" class="btn btn-outline-light btn-sm" href="index.php" style="position: absolute; left: 5px; top: 9px;"><b>Voltar</b></a>
+        <a role="button" class="btn btn-back btn-outline-light btn-sm" href="index.php"><b>Voltar</b></a>
         <b>Cadastro Projecta</b>
         
         </div>

@@ -7,8 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
 
-    <title>Hello, world!</title>
+    <title>Projecta :: Home</title>
     <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-light bg-light" style="padding-left: 15%;padding-right: 15%;">
         <a class="navbar-brand" href="#index"><img src="http://www.2webmakers.com.br/projecta/media/watermark.png" style="max-height: 25px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,31 +32,8 @@
         </div>
     </nav>
     
-    <style>
-    .btn-login{
-        background: #1A4B8EFF;
-    }
-    .navbar{
-        transition: background 1s;
-        font-weight: bold;
-    }
-    .logo{
-        max-height: 250px;
-    }
-    .active{
-        border-bottom: 5px solid red;
-    }
-    .about{
-        color: #00bcd4;
-    }
-    @media only screen and (max-width: 768px) {
-        .logo{
-            width: 100%;
-        }
-    }
-    </style>
     <script>
-    window.onscroll = function myFunction() {
+    window.onscroll = function () {
         if (document.body.scrollTop > 15 || document.documentElement.scrollTop > 15) {
             document.getElementById("navbar").className = "navbar sticky-top navbar-expand-lg navbar-light";
         } else {
@@ -68,16 +46,16 @@
   </head>
   <body data-spy="scroll" data-target="#navbar" data-offset="0">
     
-    <section id="index" style="background-image: url(https://backgroundcheckall.com/wp-content/uploads/2017/12/work-background-3.jpg); background-attachment: fixed; background-size: cover;">
-        <div class="container" style="padding-top: 240px; padding-bottom: 240px; margin: auto;">
+    <section id="index">
+        <div class="container section-container">
             <div class="text-center">
                 <img class="logo" src="http://www.2webmakers.com.br/projecta/media/culturinvest-branco.png"><br>
                 <a role="button" href="login.php" class="btn btn-primary border-dark text-white btn-lg btn-login">Entrar</a>                
             </div>
         </div>
     </section>
-    <section id="home"  style="background-color: white; background-attachment: fixed; background-size: cover;">
-        <div class="container" style="padding-top: 240px; padding-bottom: 240px; margin: auto;">
+    <section id="home"  style="background-color: white;">
+        <div class="container section-container">
             <div class="row">
                 <div class="col-md-4">
                 <h3 class="about">SOBRE NÓS</h3><br>
@@ -87,14 +65,14 @@
             </div>
         </div>
     </section>
-    <section id="about" style="background-color: #00bcd4; ">
-        <div class="container" style="padding-top: 240px; padding-bottom: 240px; margin: auto;">
+    <section id="about" style="background-color: #00bcd4;">
+        <div id='container-about' class="container" >
             <div class="text-center">
                 <h1 style="color: white;">PARCEIROS</h1><br>
                 <p style="color: white;">Somos parceiros das melhores empresas do País.</p>
                 <div class="card-deck">
                     <div class="card" style="max-width: 18rem;">
-                        <img class="card-img-top" src="http://www.2webmakers.com.br/projecta/media/logo-wevinc.png" alt="Card image cap">
+                        <img class="card-img-top" src="http://www.2webmakers.com.br/projecta/media/logo-wevinc.png" alt="Wevinc Logo">
                         <div class="card-body">
                             <p class="card-text">A Wevinc é uma empresa criada com a junção da Culturinvest e Tolentinos.</p>
                         </div>
@@ -107,7 +85,7 @@
         </div>
     </section>
     <section  id="tres">
-        <div class="container" style="padding-top: 240px; padding-bottom: 240px; margin: auto;">
+        <div class="container section-container">
             <div class="text-center">
                 
             </div>
