@@ -35,7 +35,7 @@
     <div class="center">
     <div class="card border-dark mb-3 card-form" style="">
         <div class="card-header border-dark text-center text-white">
-        <a role="button" class="btn btn-outline-light btn-sm" href="login.php" style="position: absolute; left: 5px; top: 9px;"><b>Voltar</b></a>
+        <a role="button" class="btn btn-outline-light btn-sm" href="index.php" style="position: absolute; left: 5px; top: 9px;"><b>Voltar</b></a>
         <b>Cadastro Projecta</b>
         
         </div>

@@ -131,7 +131,7 @@
                       <button type="submit" class="btn btn-primary mb-3">Entrar</button>
                     </form>
                     <a href="/Projecta-Novo/esqueceu_senha.php">Esqueceu sua senha?</a>
-                    <p class="mt-2">Não tem conta?<a href="/Projecta-Novo/cadastro.php"> Cadastre-se</a></p>
+                    <p class="mt-2">Não tem conta? <a href="/Projecta-Novo/cadastro.php">Cadastre-se</a></p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -164,7 +164,7 @@
                       <button type="submit" class="btn btn-primary mb-3">Entrar</button>
                     </form>
                     <a href="/Projecta-Novo/esqueceu_senha.php">Esqueceu sua senha?</a>
-                    <p class="mt-2">Não tem conta?<a href="/Projecta-Novo/cadastro.php"> Cadastre-se</a></p>
+                    <p class="mt-2">Não tem conta? <a href="/Projecta-Novo/cadastro.php">Cadastre-se</a></p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
@@ -197,7 +197,7 @@
                       <button type="submit" class="btn btn-primary mb-3">Entrar</button>
                     </form>
                     <a href="/Projecta-Novo/esqueceu_senha.php">Esqueceu sua senha?</a>
-                    <p class="mt-2">Não tem conta?<a href="/Projecta-Novo/cadastro.php"> Cadastre-se</a></p>
+                    <p class="mt-2">Não tem conta? <a href="/Projecta-Novo/cadastro.php">Cadastre-se</a></p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
