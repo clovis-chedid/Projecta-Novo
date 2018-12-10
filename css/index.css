@@ -24,6 +24,15 @@
         background-attachment: fixed; 
         background-size: cover;
     }
+    #about{
+	background-color: #00bcd4;
+    }
+    #home{
+	background-color: white;
+    }
+    .card-parceiro{
+	max-width: 18rem;
+    }
     .section-container{
         padding-top: 240px; 
         padding-bottom: 240px; 

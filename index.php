@@ -54,7 +54,7 @@
             </div>
         </div>
     </section>
-    <section id="home"  style="background-color: white;">
+    <section id="home">
         <div class="container section-container">
             <div class="row">
                 <div class="col-md-4">
@@ -65,13 +65,13 @@
             </div>
         </div>
     </section>
-    <section id="about" style="background-color: #00bcd4;">
+    <section id="about">
         <div id='container-about' class="container" >
             <div class="text-center">
                 <h1 style="color: white;">PARCEIROS</h1><br>
                 <p style="color: white;">Somos parceiros das melhores empresas do País.</p>
                 <div class="card-deck">
-                    <div class="card" style="max-width: 18rem;">
+                    <div class="card card-parceiro">
                         <img class="card-img-top" src="http://www.2webmakers.com.br/projecta/media/logo-wevinc.png" alt="Wevinc Logo">
                         <div class="card-body">
                             <p class="card-text">A Wevinc é uma empresa criada com a junção da Culturinvest e Tolentinos.</p>
