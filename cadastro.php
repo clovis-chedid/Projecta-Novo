@@ -13,12 +13,12 @@
     <div class="card border-dark mb-3 card-form">
         <div class="card-header border-dark text-center text-white">
         <a role="button" class="btn btn-back btn-outline-light btn-sm" href="index.php"><b>Voltar</b></a>
-        <b>Cadastro Projecta</b>
+        <b>Abrir conta Trial</b>
         
         </div>
         <div class="card-body">
             <p class="card-text">Campos marcados com <span class="text-danger"><b>*</b></span> são obrigatórios.</p>
-            <form>
+            <form method="GET" action="validar.php">
                 <div class="form-group">
                     <label for="inputNome">Nome Completo <span class="text-danger"><b>*</b></span></label>
                     <input type="text" class="form-control" id="inputNome" required>
