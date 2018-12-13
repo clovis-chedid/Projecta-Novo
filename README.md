@@ -1,1 +1,0 @@
-# Projecta-Novo

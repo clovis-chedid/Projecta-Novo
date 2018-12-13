@@ -1,4 +1,8 @@
   <!doctype html>
+  <?php 
+    require 'strings.php';
+    $str = $strings['pagina-login'];
+  ?>
   <html lang="pt">
     <head>
       <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
@@ -6,7 +10,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="css/login.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <title>Projecta :: Acesso</title>
+      <title><?php echo $str['str-titulo-pagina'] ?></title>
       
     </head>
     <body class="text-center">
@@ -14,34 +18,34 @@
           <div class="h-100 row align-items-center">
             <div class="col">
               <img class="background-img" src="http://www.2webmakers.com.br/projecta/media/watermark2.png" style="">
-              <h3 class='mb-5'>Acesse um de nossos portais:</h1>
+              <h3 class='mb-5'><?php echo $str['str-titulo-cards']; ?></h1>
               <div class="card-deck mx-auto mb-2 row cards">
               <div class="card text-white border border-dark" style="max-width: 450px; background-color: #1A4B8EFF;">
                     <div class="card-body">
-                      <h5 class="card-title">APOIADOR</h5>
-                      <p class="card-text">O portal do apoiador é onde você poderá encontrar projetos para serem apoiados.</p>
+                      <h5 class="card-title"><?php echo $str['str-titulo-card-1'] ?></h5>
+                      <p class="card-text"><?php echo $str['str-desc-card-1'] ?></p>
                     </div>
                     <div class="card-footer bg-transparent">
-                        <a href="#" class="btn btn-outline-primary text-white border-light btn-block btn-lg" data-toggle="modal" data-target="#modalApoiador">ACESSAR</a>
+                        <a href="#" class="btn btn-outline-primary text-white border-light btn-block btn-lg" data-toggle="modal" data-target="#modalApoiador"><?php echo $str['str-btn_acesso'] ?></a>
                         
                       </div>
                   </div>
                   <div class="card text-white" style="max-width: 450px; background-color: #1A4B8EFF; height: auto;">
                     <div class="card-body">
-                      <h5 class="card-title">CAPTADOR</h5>
-                      <p class="card-text">O portal do captador é onde você poderá encontrar clientes para realizar a captação de recursos.</p>
+                      <h5 class="card-title"><?php echo $str['str-titulo-card-2'] ?></h5>
+                      <p class="card-text"><?php echo $str['str-desc-card-2'] ?></p>
                     </div>
                     <div class="card-footer bg-transparent">
-                      <a href="#" class="btn btn-outline-primary text-white border-light btn-block btn-lg" data-toggle="modal" data-target="#modalCaptador">ACESSAR</a>
+                      <a href="#" class="btn btn-outline-primary text-white border-light btn-block btn-lg" data-toggle="modal" data-target="#modalCaptador"><?php echo $str['str-btn_acesso'] ?></a>
                       </div>
                   </div>
                   <div class="card text-white" style="max-width: 450px; background-color: #1A4B8EFF;">
                     <div class="card-body">
-                      <h5 class="card-title">REALIZADOR</h5>
-                      <p class="card-text">O portal do realizador é onde você poderá cadastrar seus novos projetos.</p>
+                      <h5 class="card-title"><?php echo $str['str-titulo-card-3'] ?></h5>
+                      <p class="card-text"><?php echo $str['str-desc-card-3'] ?></p>
                     </div>
                       <div class="card-footer bg-transparent">
-                        <a href="#" class="btn btn-outline-primary text-white border-light btn-block btn-lg" data-toggle="modal" data-target="#modalRealizador">ACESSAR</a>
+                        <a href="#" class="btn btn-outline-primary text-white border-light btn-block btn-lg" data-toggle="modal" data-target="#modalRealizador"><?php echo $str['str-btn_acesso'] ?></a>
                       </div>
                   </div>
                 </div>

@@ -30,7 +30,6 @@
     <title>Projecta :: Recuperação de senha</title>
   </head>
   <body>
-    <!-- CÓDIGO PRÉ-ENVIO -->
     <?php if (!isset($_GET['email'])): ?>
     <div class="center">
     <div class="card border-dark mb-3 card-form" style="">
@@ -41,7 +40,7 @@
                 <div class="form-group">
                     <label for="inputEmail">Endereço de Email <span class="text-danger"><b>*</b></span></label>
                     <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="descricao" required>
-                    <small id="descricao" class="form-text text-muted">Preencha o endereço correspondente a conta que deseja recuperar.</small>
+                    <small id="descricao" class="form-text text-muted">Preencha com o endereço correspondente a conta que deseja recuperar.</small>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block"><B>Enviar</B></button>
             </form>

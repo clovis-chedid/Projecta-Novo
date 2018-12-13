@@ -19,13 +19,13 @@
         <div class="collapse navbar-collapse ml-auto" style="height: auto;" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#home" style="height: 100%;">Sobre nós</a>
+                <a class="nav-link js-scroll-trigger" href="#home" style="height: 100%;">Sobre nós</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#about">Parceiros</a>
+                <a class="nav-link js-scroll-trigger" href="#about">Parceiros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#tres">Contatos</a>
+                <a class="nav-link js-scroll-trigger" href="#tres">Contatos</a>
             </li>
             </ul>
             <a href="/Projecta-Novo/cadastro.php" role="button" class="btn btn-success text-white my-2 my-sm-0">Registre-se</a>
@@ -33,18 +33,11 @@
     </nav>
     
     <script>
-    window.onscroll = function () {
-        if (document.body.scrollTop > 15 || document.documentElement.scrollTop > 15) {
-            document.getElementById("navbar").className = "navbar sticky-top navbar-expand-lg navbar-light";
-        } else {
-            document.getElementById("navbar").className = "navbar sticky-top navbar-expand-lg navbar-light bg-light";
-        }
-    };
 
     
     </script>
   </head>
-  <body data-spy="scroll" data-target="#navbar" data-offset="0">
+  <body data-spy="scroll" data-target="#navbar" data-offset="25">
     
     <section id="index">
         <div class="container section-container">
@@ -91,9 +84,13 @@
             </div>
         </div>
     </section>
+    
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
   </body>
 </html>
