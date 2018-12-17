@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('css/Rubik-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 .btn-login{
         background: #1A4B8EFF;
     }
@@ -6,7 +12,9 @@
         font-weight: bold;
     }
     .logo{
-        max-height: 250px;
+        max-height: 125px;
+        height: 125px;
+        margin-bottom: 15px;
     }
     .active{
         border-bottom: 5px red solid;

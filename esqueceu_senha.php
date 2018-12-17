@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt">
   <head>
-
+    <?php require 'php/strings.php'; $str = $strings['pagina-esqueceu_senha']; ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
@@ -27,26 +27,26 @@
             }
         }
     </style>
-    <title>Projecta :: Recuperação de senha</title>
+    <title><?php echo $str['str-titulo-pagina']; ?></title>
   </head>
   <body>
     <?php if (!isset($_GET['email'])): ?>
     <div class="center">
     <div class="card border-dark mb-3 card-form" style="">
-        <div class="card-header border-dark text-center"><b>Recuperação de Senha</b></div>
+        <div class="card-header border-dark text-center"><b><?php echo $str['str-titulo-card']; ?></b></div>
         <div class="card-body">
-            <p class="card-text">Preencha os campos abaixo e enviaremos um email com instruções para recuperação de sua senha.</p>
+            <p class="card-text"><?php echo $str['str-desc-card']; ?></p>
             <form method="GET" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <div class="form-group">
-                    <label for="inputEmail">Endereço de Email <span class="text-danger"><b>*</b></span></label>
+                    <label for="inputEmail"><?php echo $str['str-label-inputEmail']; ?></label>
                     <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="descricao" required>
-                    <small id="descricao" class="form-text text-muted">Preencha com o endereço correspondente a conta que deseja recuperar.</small>
+                    <small id="descricao" class="form-text text-muted"><?php echo $str['str-help-inputEmail']; ?></small>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block"><B>Enviar</B></button>
+                <button type="submit" class="btn btn-primary btn-block"><B><?php echo $str['str-texto-btn-enviar']; ?></B></button>
             </form>
         </div>
         <div class="card-footer text-center">
-            <a role="button" class="btn w-25 btn-outline-primary" href="login.php">Voltar</a>
+            <a role="button" class="btn w-25 btn-outline-primary" href="login.php"><?php echo $str['str-texto-btn-voltar']; ?></a>
         </div>
     </div>
     </div>
@@ -54,10 +54,10 @@
     <div class="center">
     
     <div class="card border-dark mb-3 card-form" style="">
-        <div class="card-header border-dark text-center"><b>Recuperação de Senha</b></div>
+        <div class="card-header border-dark text-center"><b><?php echo $str['str-titulo-card']; ?></b></div>
         <div class="card-body">
-            <h5 class="card-title text-success">Sucesso!</h5>
-            <p class="card-text">Foi enviado um email para <b><?php echo $_GET['email'] ?></b>, nele estão contidas instruções para a recuperação de sua senha, caso não o veja, verifique o lixo eletrônico.</p>
+            <h5 class="card-title text-success"><?php echo $str['str-header-card-sucesso']; ?></h5>
+            <p class="card-text"><?php echo $str['str-desc-card-sucesso']; ?></p>
         </div>
         <div class="card-footer text-center">
             <a role="button" class="btn w-25 btn-outline-primary" href="login.php">Voltar</a>
