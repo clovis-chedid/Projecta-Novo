@@ -27,28 +27,34 @@ function registrarUsuario($info){
     list($tipoUsuario,$porteUsuario,$erro) = checharPropositoPorte($info['inputPorte'],$info['inputProposito'],$_POST);
     $empresa = (isset($info['inputEmpresa'])) ? $info['inputEmpresa'] : 'Não especificada';
     $cargoEmpresa = (isset($info['inputCargo'])) ? $info['inputCargo'] : 'Não especificada';
-
-    $query = sprintf("INSERT INTO usuario (nome,senha,situacao) VALUES ('%s','%s','1')",$nome,$senha);
-    $mysqli->query($query);
-    $idUsuario = $mysqli->insert_id;
-    $query = sprintf("INSERT INTO empresa (nome_empresa,nome_contato,email_contato,telefone_contato) VALUES ('%s','%s','%s','%s')",$info['inputEmpresa'],$nome,$email,$info['inputTelefone']);
-    $mysqli->query($query);
-    $idEmpresa = $mysqli->insert_id;
-    if($porteUsuario != 'Pessoa Física'){
-        $tipoPessoa = 'J';
+    $query = 'select email from usuario where email="'.$email.'"';
+    $result = $mysqli->query($query);
+    if($result->num_rows == '0'){
+        $query = sprintf("INSERT INTO usuario (nome,senha,email,situacao) VALUES ('%s','%s','%s','1')",$nome,$senha,$email);
+        $mysqli->query($query);
+        $idUsuario = $mysqli->insert_id;
+        $query = sprintf("INSERT INTO empresa (nome_empresa,nome_contato,email_contato,telefone_contato) VALUES ('%s','%s','%s','%s')",$info['inputEmpresa'],$nome,$email,$info['inputTelefone']);
+        $mysqli->query($query);
+        $idEmpresa = $mysqli->insert_id;
+        if($porteUsuario != 'Pessoa Física'){
+            $tipoPessoa = 'J';
+        }else{
+            $tipoPessoa = 'F';
+        }
+        $query = sprintf("INSERT INTO conta (tipo_pessoa,id_empresa,id_usuario,id_categoria) VALUES ('%s','%s','%s','%s')",$tipoPessoa,$idEmpresa,$idUsuario,$tipoUsuario);
+        $mysqli->query($query);
+        $idConta = $mysqli->insert_id;
+        $query = sprintf("INSERT INTO acesso (id_usuario,id_conta,email,tipo_acesso,status) VALUES ('%s','%s','%s','1','1')", $idUsuario,$idConta,$email);
+        $mysqli->query($query);
+        $uid = uniqid(rand(),true);
+        $token = md5('id='.$idUsuario.'&email='.$email.'&uid='.$uid.'&chave='.time());
+        $mysqli->query("INSERT INTO controle_ativacao (id_usuario,email,uid,token) VALUES ('".$idUsuario."','".$email."','".$uid."','".$token."')");
+        $link = 'http://localhost/Projecta-Novo/ativar.php?token='.$token;
+        enviarEmail($email,$link, $nome);
     }else{
-        $tipoPessoa = 'F';
+        $erro = 'Email já existente';
+        header('location: /Projecta-Novo/cadastro.php?e=2'); 
     }
-    $query = sprintf("INSERT INTO conta (tipo_pessoa,id_empresa,id_usuario,id_categoria) VALUES ('%s','%s','%s','%s')",$tipoPessoa,$idEmpresa,$idUsuario,$tipoUsuario);
-    $mysqli->query($query);
-    $idConta = $mysqli->insert_id;
-    $query = sprintf("INSERT INTO acesso (id_usuario,id_conta,email,tipo_acesso,status) VALUES ('%s','%s','%s','1','1')", $idUsuario,$idConta,$email);
-    $mysqli->query($query);
-    $uid = uniqid(rand(),true);
-    $token = md5('id='.$idUsuario.'&email='.$email.'&uid='.$uid.'&chave='.time());
-    $mysqli->query("INSERT INTO controle_ativacao (id_usuario,email,uid,token) VALUES ('".$idUsuario."','".$email."','".$uid."','".$token."')");
-    $link = 'http://localhost/Projecta-Novo/ativar.php?token='.$token;
-    enviarEmail($email,$link, $nome);
 }
 
 function checharPropositoPorte($porte,$proposito,$info){
@@ -66,6 +72,7 @@ function checharPropositoPorte($porte,$proposito,$info){
             break;
         default:
             $erro = "Campo Preenchido Incorretamente";
+            header('location: /Projecta-Novo/cadastro.php?e=3');
     }
     switch($info['inputPorte']){
         case '1':
@@ -88,6 +95,7 @@ function checharPropositoPorte($porte,$proposito,$info){
             break;
         default:
             $erro = "Campo Preenchido Incorretamente";
+            header('location: /Projecta-Novo/cadastro.php?e=3');
     }
     return array($tipoUsuario,$porteUsuario,$erro);
 }
@@ -130,17 +138,15 @@ function enviarEmail($destinatario, $link, $nomeCliente){
 </html>
     
     ');
-    //$mail->AddAttachment("c:/temp/documento.pdf", "novo_nome.pdf");
 
     $enviado = $mail->Send();
 
     $mail->ClearAllRecipients();
     $mail->ClearAttachments();
 
-    if ($enviado) {
+    if ($enviado and $erro == 'Nenhum') {
         header('location: /Projecta-Novo/cadastro.php?e=0&email='.$destinatario);
-    }
-    else {
+    }elseif(!$enviado){
         header('location: /Projecta-Novo/cadastro.php?e=1');
     }
 }

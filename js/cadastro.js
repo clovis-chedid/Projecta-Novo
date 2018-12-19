@@ -1,4 +1,4 @@
-			   $(document).ready(function () {
+			$(document).ready(function () {
                $("#inputSenha, #inputConfirmarSenha").keyup(function() {
                 var senha = $("#inputSenha").val();
                 var confirmarSenha = $("#inputConfirmarSenha").val();
@@ -32,6 +32,10 @@
                         $("#inputCargo").prop( "disabled", false);
                         $("#cargoEmpresa").css("display","block");
                     }
+                });
+                $('#inputEmail').keydown(function() {
+                    $("#emailInvalido").css('display','none');
+                    $("#inputEmail").removeClass('is-invalid');
                 });
             });
             

@@ -3,7 +3,11 @@
 <?php
     require 'php/strings.php';
     $str = $strings['pagina-cadastro'];
-
+    $erros = array(
+        '1' => 'Não foi possível enviar o email, verifique se o mesmo é válido',
+        '2' => 'Email já existente',
+        '3' => 'Ocorreu um erro inesperado, tente novamente mais tarde'
+    )
 
 ?>
   <head>
@@ -12,13 +16,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/cadastro.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css">
   
     <title><?php echo $str['str-titulo-pagina'] ?></title>
   </head>
   <body>
     <div class="center">
+    
     <div class="card border-dark mb-3 card-form">
+    
         <div class="card-header border-dark text-center text-white">
         <a role="button" class="btn btn-back btn-outline-light btn-sm" href="index.php"><b>Voltar</b></a>
         <b id="titulo-card"><?php echo $str['str-titulo-card'] ?></b>
@@ -30,7 +38,7 @@
             }
         </style>
         <div class="card-body">
-        <?php if(!isset($_GET['e'])): ?>
+        <?php if(!isset($_GET['e']) or $_GET['e'] == '2'): ?>
             <p class="card-text" id="desc-card"><?php echo $str['str-desc-card'] ?></p>
             <form method="POST" action="php/register.php">
                 <div class="form-group">
@@ -38,21 +46,26 @@
                     <input type="text" class="form-control" name="inputNome" id="inputNome" required>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail" id="label-inputEmail"><?php echo $str['str-label-inputEmail'] ?></label>
-                    <input type="email" class="form-control" name="inputEmail" id="inputEmail" required>
+                    <label for="inputEmail"  id="label-inputEmail"><?php echo $str['str-label-inputEmail'] ?></label>
+                    <input data-inputmask="'alias': 'email'" type="text" class="<?php if(isset($_GET['e']) and $_GET['e'] == '2') { echo 'is-invalid';} ?> form-control" name="inputEmail" id="email" required>
+                    <?php if(isset($_GET['e']) and $_GET['e'] == '2'): ?>
+                    <div class="invalid-feedback" id="emailInvalido">
+                        Email já existente, para recuperar sua conta clique <a style="color: red;" href="esqueceu_senha.php"><b>aqui</b></a>
+                    </div>
+                    <?php endif ?>
                 </div>
                 <div class="form-group">
                     <div class="dropdown">
                     <label for="inputEmpresa" id="label-inputEmpresa"><?php echo $str['str-label-inputEmpresa'] ?></label>
                     <input type="text" data-toggle="dropdown" class="form-control" name="inputEmpresa" id="inputEmpresa">
                    
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuReference" id="dropdown">
+                        <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuReference" id="dropdown">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div style="display: none;" class="form-group col" id="cargoEmpresa">
@@ -61,7 +74,7 @@
                 </div>
                 <div class="form-group">
                     <label for="inputTelefone" id="label-inputCargo"><?php echo $str['str-label-inputTelefone'] ?></label>
-                    <input type="number" class="form-control"  name="inputTelefone" id="inputTelefone" required>
+                    <input type="text" class="form-control" data-inputmask="'mask': '(99) 99999-9999'" name="inputTelefone" id="inputTelefone" required>
                 </div>
                 <div class="form-group">
                     <label for="inputProposito" id="label-inputProposito"><?php echo $str['str-label-inputProposito'] ?></label>
@@ -120,6 +133,12 @@
         <?php elseif($_GET['e'] == '0'): ?>
         <h4 class="card-title text-success">Sucesso!</h4>
         <p class="card-text text-justify">Foi enviado um email para o endereço <?php if(isset($_GET['email'])){echo '<b>'.$_GET['email'].'</b>';}else{echo 'de email fornecido';} ?></b> com um link para a <b>ativação de sua conta</b>, o link só é válido por 24 horas, após isso é necessário que se preencha o formulário novamente.</p>
+        <?php elseif($_GET['e'] == '1'): ?>
+        <h4 class="card-title text-danger">Erro!</h4>
+        <p class="card-text text-justify"><?php echo $erros[$_GET['e']]; ?></p>
+        <?php elseif($_GET['e'] == '3'): ?>
+        <h4 class="card-title text-danger">Erro!</h4>
+        <p class="card-text text-justify"><?php echo $erros[$_GET['e']]; ?></p>
         <?php endif ?>
         </div>
     </div>
@@ -127,22 +146,24 @@
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/RobinHerbots/Inputmask/4.x/dist/min/jquery.inputmask.bundle.min.js"></script>
     <script src="js/cadastro.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script type="text/javascript">
-    $(document).ready(function(){
-        $('#inputEmpresa').focus(function(){
-            $('.dropdown').dropdown('toggle');
-            window.console.log('in');
-        });
-        $('#inputEmpresa').focusout(function(){
-            $('.dropdown-menu').removeClass('show');
-        });
-        $('#inputEmpresa').ready(function(){
-            $.
-        });
-    });
+    $('input').inputmask();
+    // $(document).ready(function(){
+    //     $('#inputEmpresa').focus(function(){
+    //         $('.dropdown').dropdown('toggle');
+    //         window.console.log('in');
+    //     });
+    //     $('#inputEmpresa').focusout(function(){
+    //         $('.dropdown-menu').removeClass('show');
+    //     });
+    //     $('#inputEmpresa').ready(function(){
+            
+    //     });
+    // });
     </script>
   </body>
 </html>

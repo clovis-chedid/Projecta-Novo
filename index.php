@@ -28,7 +28,7 @@
                 <a class="nav-link js-scroll-trigger" href="#tres">Contatos</a>
             </li>
             </ul>
-            <a href="/Projecta-Novo/cadastro.php" role="button" class="btn btn-success text-white my-2 my-sm-0">Registre-se</a>
+            <a role="button" href="login.php" class="btn btn-primary border-dark text-white btn-sm btn-login">Acesse sua conta</a>       
         </div>
     </nav>
     
@@ -43,7 +43,8 @@
         <div class="container section-container">
             <div class="text-center">
                 <img class="logo" src="img/logo_branca.png"><br>
-                <a role="button" href="login.php" class="btn btn-primary border-dark text-white btn-lg btn-login">Entrar</a>                
+                <a href="/Projecta-Novo/cadastro.php" role="button" class="btn btn-success text-white my-2 my-sm-0">Registre-se</a>
+                         
             </div>
         </div>
     </section>

@@ -1,162 +1,175 @@
-  <!doctype html>
-  <?php 
-    require 'php/strings.php';
-    $str = $strings['pagina-login'];
-  ?>
-  <html lang="pt">
-    <head>
-      <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="css/login.css">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <title><?php echo $str['str-titulo-pagina'] ?></title>
-      
-    </head>
-    <body class="text-center">
-      <div class="container-fluid mh-100 center background-div">
-          <div class="h-100 row align-items-center">
-            <div class="col">
-              <img class="background-img" src="img/logo.png" style="">
-              <h3 class='mb-5' id='titulo-cards'><?php echo $str['str-titulo-cards']; ?></h1>
-              <div class="card-deck mx-auto mb-2 row cards">
-              <div class="card text-white border border-dark" style="max-width: 450px; background-color: #1A4B8EFF;">
-                    <div class="card-body">
-                      <h5 class="card-title" id="titulo-card-1"><?php echo $str['str-titulo-card-1'] ?></h5>
-                      <p id="desc-card-1" class="card-text"><?php echo $str['str-desc-card-1'] ?></p>
-                    </div>
-                    <div class="card-footer bg-transparent">
-                        <a id="btn_acesso" href="#" class="btn btn-outline-primary text-white border-light btn-block btn-lg" data-toggle="modal" data-target="#modalApoiador"><?php echo $str['str-btn_acesso'] ?></a>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<title>Projecta &mdash; Acesso</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    
+</head>
+<body class="my-login-page">
+
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="img/favicon.png">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">Login</h4>
+							<form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+							 
+								<div class="form-group">
+									<label for="email">Endereço de email</label>
+
+									<input id="email" data-inputmask="'alias': 'email'" type="text" class="form-control" name="inputEmail" value="" required autofocus>
+								</div>
+
+								<div class="form-group">
+									<label for="password">Senha
+										<a href="esqueceu_senha.php" class="float-right">
+											Esqueceu sua senha?
+										</a>
+									</label>
+									<input id="password" type="password" class="form-control" name="inputSenha" required data-eye>
+								</div>
+
+								<div class="form-group p-2">
+									<!-- <label>
+										<input type="checkbox" name="remember"> Remember Me
+									</label> -->
+								</div>
+
+								<div class="form-group no-margin">
+                                    <div class="btn-group-vertical w-100">
+                                        <button type="submit" class="btn btn-primary btn-block has-spinner">Login</button>
+                                        <!-- <a role="button" class="btn w-100 btn-sm btn-secondary" href="index.php">Voltar</a> -->
+                                    </div>
+								</div>
+								<!-- <div class="margin-top20 text-center">
+									Não tem conta? <a href="register.html">Crie aqui</a>
+                                </div> -->
+                                
+                            </form>
+                            
+                        </div>
+                    
                         
-                      </div>
-                  </div>
-                  <div class="card text-white" style="max-width: 450px; background-color: #1A4B8EFF; height: auto;">
-                    <div class="card-body">
-                      <h5 class="card-title"><?php echo $str['str-titulo-card-2'] ?></h5>
-                      <p id="desc-card-2" class="card-text"><?php echo $str['str-desc-card-2'] ?></p>
                     </div>
-                    <div class="card-footer bg-transparent">
-                      <a id="btn_acesso" href="#" class="btn btn-outline-primary text-white border-light btn-block btn-lg" data-toggle="modal" data-target="#modalCaptador"><?php echo $str['str-btn_acesso'] ?></a>
-                      </div>
-                  </div>
-                  <div class="card text-white" style="max-width: 450px; background-color: #1A4B8EFF;">
-                    <div class="card-body">
-                      <h5 class="card-title"><?php echo $str['str-titulo-card-3'] ?></h5>
-                      <p id="desc-card-3" class="card-text"><?php echo $str['str-desc-card-3'] ?></p>
-                    </div>
-                      <div class="card-footer bg-transparent">
-                        <a href="#" id="btn_acesso" class="btn btn-outline-primary text-white border-light btn-block btn-lg" data-toggle="modal" data-target="#modalRealizador"><?php echo $str['str-btn_acesso'] ?></a>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal fade" id="modalApoiador" tabindex="-1" role="dialog" aria-labelledby="modalTitulo" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content border border-dark">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modalTitulo">Entrar como Apoiador</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label for="email">Endereço de Email:</label>
-                        <input type="email" class="form-control" name="email" placeholder="Endereço de Email">
-                      </div>
-                      <div class="form-group">
-                        <label for="senha">Senha:</label>
-                        <input type="password" class="form-control" name="senha" placeholder="Senha">
-                      </div>
-                      <button type="submit" class="btn btn-primary mb-3">Entrar</button>
-                    </form>
-                    <a href="/Projecta-Novo/esqueceu_senha.php">Esqueceu sua senha?</a>
-                    <p class="mt-2">Não tem conta? <a href="/Projecta-Novo/cadastro.php">Cadastre-se</a></p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
-                        Fechar
-                      </button>
-                      
-                    </div>
-                  </div>
-              </div>
-              </div>
-              <div class="modal fade" id="modalCaptador" tabindex="-1" role="dialog" aria-labelledby="modalTituloCaptador" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content border border-dark">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modalTituloCaptador">Entrar como Captador</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label for="email">Endereço de Email:</label>
-                        <input type="email" class="form-control" name="email" placeholder="Endereço de Email">
-                      </div>
-                      <div class="form-group">
-                        <label for="senha">Senha:</label>
-                        <input type="password" class="form-control" name="senha" placeholder="Senha">
-                      </div>
-                      <button type="submit" class="btn btn-primary mb-3">Entrar</button>
-                    </form>
-                    <a href="/Projecta-Novo/esqueceu_senha.php">Esqueceu sua senha?</a>
-                    <p class="mt-2">Não tem conta? <a href="/Projecta-Novo/cadastro.php">Cadastre-se</a></p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
-                        Fechar
-                      </button>
-                      
-                    </div>
-                  </div>
-              </div>
-              </div>
-              <div class="modal fade" id="modalRealizador" tabindex="-1" role="dialog" aria-labelledby="modalTituloRealizador" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content border border-dark">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modalTituloRealizador">Entrar como Realizador</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label for="email">Endereço de Email:</label>
-                        <input type="email" class="form-control" name="email" placeholder="Endereço de Email">
-                      </div>
-                      <div class="form-group">
-                        <label for="senha">Senha:</label>
-                        <input type="password" class="form-control" name="senha" placeholder="Senha">
-                      </div>
-                      <button type="submit" class="btn btn-primary mb-3">Entrar</button>
-                    </form>
-                    <a href="/Projecta-Novo/esqueceu_senha.php">Esqueceu sua senha?</a>
-                    <p class="mt-2">Não tem conta? <a href="/Projecta-Novo/cadastro.php">Cadastre-se</a></p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
-                        Fechar
-                      </button>
-                      
-                    </div>
-                  </div>
-              </div>
-            </div> 
-            
-      </div>
-      </div>
-    </body>
+					<div class="footer">
+                        Copyright &copy; Culturinvest 2018
+					</div>
+				</div>
+			</div>
+        </div>
+        
+    </section>
     
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </html>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/RobinHerbots/Inputmask/4.x/dist/min/jquery.inputmask.bundle.min.js"></script>
+    
+    
+    <script src="js/login.js"></script>
+    <?php
+    if(isset($_POST['inputEmail'])){
+        echo '<script type="text/javascript">$(".has-spinner").addClass("active");
+		$(".has-spinner").addClass("btn-success");$(".has-spinner").html("'."<span class='spinner'><i class='fa fa-refresh fa-spin'></i></span>".'");</script>';
+        require_once 'php/db_connect.php';
+        $mysqli = new mysqli(db_host,db_usuario,db_senha,db_banco);
+        extract($_POST);
+        $query = sprintf("select * from usuario where email='%s'",$inputEmail);
+        $result = $mysqli->query($query);
+        if ($result->num_rows > 0) {
+            if($result->num_rows > 1){
+                $row = $result->fetch_assoc();
+                $email = $row['email'];
+                $senha = $row['senha'];
+                $nome = $row['nome'];
+                $id = $row['id_usuario'];
+            }else{
+                while($row = $result->fetch_assoc()) {
+                    $email = $row['email'];
+                    $senha = $row['senha'];
+                    $nome = $row['nome'];
+                    $id = $row['id_usuario'];
+                    // print_r($row);
+                }
+            }
+            if($senha == md5($inputSenha)){
+                $_SESSION['email'] = $inputEmail;
+                $_SESSION['nome'] = $nome;
+                $GLOBALS['logado'] = true;
+                $query = sprintf("select * from acesso where id_usuario =%s",$id);
+                $result = $mysqli->query($query);
+                
+
+                if($result->num_rows > 0){
+                    if($result->num_rows > 1){
+                        $GLOBALS['contas'] = array();
+                        while($row = $result->fetch_assoc()) {
+                            $idEmpresa = $mysqli->query('select id_empresa from conta where id_conta='.$row['id_conta'])->fetch_assoc();
+                            $nomeEmpresa = $mysqli->query('select nome_empresa from empresa where id_empresa='.$idEmpresa["id_empresa"])->fetch_assoc();
+                            $contas[] = array('id_conta' => $row['id_conta'], 'tipo_acesso' => $row['tipo_acesso'], 'id_empresa' => $idEmpresa['id_empresa'], 'nome_empresa' => $nomeEmpresa['nome_empresa']);
+                        }
+                        options($contas);
+                        
+                    }else{
+                        $GLOBALS['contas'] = array();
+                        while($row = $result->fetch_assoc()) {
+                            $idEmpresa = $mysqli->query('select id_empresa from conta where id_conta='.$row['id_conta'])->fetch_assoc();
+                            $nomeEmpresa = $mysqli->query('select nome_empresa from empresa where id_empresa='.$idEmpresa["id_empresa"])->fetch_assoc();
+                            $contas[] = array('id_conta' => $row['id_conta'], 'tipo_acesso' => $row['tipo_acesso'], 'id_empresa' => $idEmpresa['id_empresa'], 'nome_empresa' => $nomeEmpresa['nome_empresa']);
+                        }
+                        options($contas);
+                    }
+                }
+
+                echo '<script type="text/javascript">$(".has-spinner").removeClass("btn-success");$(".has-spinner").removeClass("active");$(".has-spinner").html(window.htmlLogin);</script>';
+                // echo '<br>';
+                // print_r($_SESSION);
+            }
+        } else {
+            echo '<script type="text/javascript">$(".has-spinner").removeClass("btn-success");$(".has-spinner").removeClass("active");</script>';
+        }
+    }
+    function options($contas){
+        $select = '<form method="POST" id="form" action="'.$_SERVER['PHP_SELF'].'" class="collapse w-100"><div class="form-check"><label for="form" class="card-title"><br><b>Selecione</b> uma conta para efetuar o login:</label>';
+        $count = 0;
+        foreach($contas as $conta){
+            $select .= '<div class="form-check"><input class="form-check-input" type="radio" name="inputConta" id="inputConta'.$count.'" value="'.$conta["id_conta"].'"><label class="form-check-label" for="inputConta'.$count++.'"><b>Empresa: </b>'.$conta["nome_empresa"].' | | <b>Nivel de acesso: </b>'.$conta["tipo_acesso"].'</label></div>';
+            $count++;
+        }
+        $select .= '</div><button class="btn-block mt-5 btn btn-sm btn-primary">ENTRAR</button></form><div class="w-100 text-center mt-2">ou <a class="text-muted text-sm w-100" href="javascript:refresh()" action="">conecte como outro usuário</a></div>';
+        $titulo = '<h5 class="mb-2">Olá '.explode(' ',$GLOBALS['nome'])[0].',</h5> ';
+        echo sprintf('
+        <script type="text/javascript">
+        $("form").addClass("collapse show");
+        $("form").collapse("toggle");
+        $(".card-body").append('."'".'%s'."'".');
+        $(".card-body").append('."'".'%s'."'".');
+        $("form").collapse("toggle");
+        </script>
+        ',$titulo,$select);
+    }
+    ?>
+    <script>
+        $('input').inputmask();
+        function refresh(){
+            window.location.replace("login.php");
+        }
+        <?php if(isset($logado) and $logado == true): ?>
+
+
+        <?php else: ?>
+
+        <?php endif ?>
+    </script>
+</body>
+</html>
