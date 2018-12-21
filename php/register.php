@@ -13,6 +13,7 @@ require '../mailer/OAuth.php';
 require '../mailer/Exception.php';
 
 if(isset($_SERVER['HTTP_REFERER']) and strpos($_SERVER['HTTP_REFERER'],'Projecta-Novo/cadastro.php') != false){
+    $_POST['inputNome'] .= ' ';
     registrarUsuario($_POST);
 }else{
     die(header('location: /Projecta-Novo/index.php'));
@@ -47,9 +48,9 @@ function registrarUsuario($info){
         $query = sprintf("INSERT INTO acesso (id_usuario,id_conta,email,tipo_acesso,status) VALUES ('%s','%s','%s','1','1')", $idUsuario,$idConta,$email);
         $mysqli->query($query);
         $uid = uniqid(rand(),true);
-        $token = md5('id='.$idUsuario.'&email='.$email.'&uid='.$uid.'&chave='.time());
+        $token = base64_encode('id='.$idUsuario.'&email='.$email.'&uid='.$uid.'&chave='.time());
         $mysqli->query("INSERT INTO controle_ativacao (id_usuario,email,uid,token) VALUES ('".$idUsuario."','".$email."','".$uid."','".$token."')");
-        $link = 'http://localhost/Projecta-Novo/ativar.php?token='.$token;
+        $link = 'http://192.168.5.102/Projecta-Novo/ativar.php?token='.$token;
         enviarEmail($email,$link, $nome);
     }else{
         $erro = 'Email já existente';
@@ -72,14 +73,14 @@ function checharPropositoPorte($porte,$proposito,$info){
             break;
         default:
             $erro = "Campo Preenchido Incorretamente";
-            header('location: /Projecta-Novo/cadastro.php?e=3');
+            header('location: /Projecta-Novo/cadastro.php?e=3&a=a'.$info['inputPorte']);
     }
     switch($info['inputPorte']){
         case '1':
             $porteUsuario = 'Grande Empresa';
             break;
         case '2':
-            $porteUsuario = 'Média Empresa';
+            $porteUsuario = 'Média Esmpresa';
             break;
         case '3':
             $porteUsuario = 'Pequena Empresa';
@@ -95,7 +96,7 @@ function checharPropositoPorte($porte,$proposito,$info){
             break;
         default:
             $erro = "Campo Preenchido Incorretamente";
-            header('location: /Projecta-Novo/cadastro.php?e=3');
+            header('location: /Projecta-Novo/cadastro.php?e=3&a='.$info['inputPorte']);
     }
     return array($tipoUsuario,$porteUsuario,$erro);
 }
@@ -108,7 +109,7 @@ function enviarEmail($destinatario, $link, $nomeCliente){
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = 'ssl';
     $mail->Username = 'davif127@gmail.com';  //LOGIN
-    $mail->Password = ''; //SENHA
+    $mail->Password = 'sabedori&1A'; //SENHA
 
     //$mail->SMTPDebug  = 2; 
 
@@ -144,7 +145,7 @@ function enviarEmail($destinatario, $link, $nomeCliente){
     $mail->ClearAllRecipients();
     $mail->ClearAttachments();
 
-    if ($enviado and $erro == 'Nenhum') {
+    if ($enviado) {
         header('location: /Projecta-Novo/cadastro.php?e=0&email='.$destinatario);
     }elseif(!$enviado){
         header('location: /Projecta-Novo/cadastro.php?e=1');

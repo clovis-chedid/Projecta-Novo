@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" type="text/css" href="css/cadastro.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css">
@@ -98,9 +99,9 @@
                             $optionNumber = 1;
                             foreach($str['options-select-inputPorte'] as $option){
                                 if($option == 'Pessoa física'){
-                                    echo '<option id="pessoaFisica" selected>'.$option.'</option>';
+                                    echo '<option id="pessoaFisica" value='.$optionNumber.' selected>'.$option.'</option>';
                                 }else{
-                                    echo '<option>'.$option.'</option>';
+                                    echo '<option value='.$optionNumber.'>'.$option.'</option>';
                                 }
                                 $optionNumber++;
                             }
@@ -126,9 +127,9 @@
                     <input type="checkbox" class="form-check-input" id="termos" required>
                     <label class="form-check-label" for="termos"><?php echo $str['str-label-inputTermos'] ?></label>
                 </div>
-                <div id="btn-submit">
-                    <button class="btn btn-primary btn-block" id="no-edit-submit"><b id="texto-btn-registrar"><?php echo $str['str-texto-btn-registrar']; ?></b></button>
-                </div>
+                <!-- <div id="btn-submit"> -->
+                    <button class="btn btn-primary btn-block has-spinner" id="no-edit-submit"><b id="texto-btn-registrar"><?php echo $str['str-texto-btn-registrar']; ?></b></button>
+                <!-- </div> -->
             </form>
         <?php elseif($_GET['e'] == '0'): ?>
         <h4 class="card-title text-success">Sucesso!</h4>

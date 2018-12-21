@@ -1,23 +1,23 @@
 <?php
 
 
-
-    $mysqli = new mysqli("localhost", "root", "", "teste");
-    $uid = "";
-    $id = 0;
-    $email = "";
-    $mysqli->query("INSERT INTO usuarios (nome,email,ativo) VALUES ('Davi','".$email."',0)");
-    $result = $mysqli->query("select id,email,uid from usuarios where id='".$_GET['id']."'");
-    $id = 0;
-    while($row = $result->fetch_assoc()){
-        $id = $row['id'];
-        $email = $row['email'];
-        $uid = $row['uid'];
+    $tokenLink = explode('&',base64_decode($_GET['token']));
+    foreach($tokenLink as $variable){
+        $variable = explode('=',$variable);
+        $GLOBALS[$variable[0]] = $variable[1];
     }
-    $token = md5($email).md5($uid);
+    // echo '<pre>';
+    // print_r($GLOBALS);
+    // echo '</pre>';
+    $mysqli = new mysqli("localhost", "root", "", "projecta");
+    $result = $mysqli->query("select * from controle_ativacao where id_usuario=".$id);
+    
+    while($row = $result->fetch_assoc()){
+        $token = $row['token'];
+    }
     if($_GET['token'] == $token){
-        $mysqli->query("UPDATE usuarios SET ativo=1");
-        header('location: /Projecta-Novo/index.php');
+        $mysqli->query("UPDATE usuario SET situacao=2 where id_usuario=".$id);
+        header('location: /Projecta-Novo/login.php?s=1');
     }
 
 

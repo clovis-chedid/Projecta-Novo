@@ -7,11 +7,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/Projecta-Novo/css/index.css">
 
     <title>Projecta :: Home</title>
     <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-light bg-light" style="padding-left: 15%;padding-right: 15%;">
-        <a class="navbar-brand" href="#index"><img src="img/logo.png" style="max-height: 25px;"></a>
+        <a class="navbar-brand" href="#index"><img src="/Projecta-Novo/img/logo.png" style="max-height: 25px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,7 +28,7 @@
                 <a class="nav-link js-scroll-trigger" href="#tres">Contatos</a>
             </li>
             </ul>
-            <a role="button" href="login.php" class="btn btn-primary border-dark text-white btn-sm btn-login">Acesse sua conta</a>       
+            <a role="button" href="/Projecta-Novo/login.php" class="btn btn-primary border-dark text-white btn-sm btn-login">Acesse sua conta</a>       
         </div>
     </nav>
     
@@ -42,7 +42,7 @@
     <section id="index">
         <div class="container section-container">
             <div class="text-center">
-                <img class="logo" src="img/logo_branca.png"><br>
+                <img class="logo" src="/Projecta-Novo/img/logo_branca.png"><br>
                 <a href="/Projecta-Novo/cadastro.php" role="button" class="btn btn-success text-white my-2 my-sm-0">Registre-se</a>
                          
             </div>

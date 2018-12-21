@@ -48,13 +48,31 @@ $(function(){
 		window.clicado = true;
 		$(this).addClass('active');
 		$(this).addClass('btn-success');
+		$('img').addClass('rotate');
 		if($(this).hasClass('active')){
 			$(this).html('<span class="spinner"><i class="fa fa-refresh fa-spin"></i></span>');
+			
+				if($('#inputEmail').val() == '' || $('#inputSenha').val() == ''){
+					$(this).html(html);
+					$(this).removeClass('btn-success');
+					$(this).removeClass('active');
+					$('#inputEmail').addClass('is-invalid');
+					$('#helpEmail').css('display','block');
+					$('#inputSenha').addClass('is-invalid');
+					$('#helpSenha').css('display','block');
+					$('img').removeClass('rotate');
+				}
+			
 		}else{
 			$(this).html(html);
 		}
 		
     });
+});
+$('input').keyup(function(){
+	$('input').removeClass('is-invalid');
+	$('#helpEmail').css('display','none');
+	$('#helpSenha').css('display','none');
 });
 function sleep(milliseconds) {
 	var start = new Date().getTime();
