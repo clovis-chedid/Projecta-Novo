@@ -109,7 +109,7 @@ function enviarEmail($destinatario, $link, $nomeCliente){
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = 'ssl';
     $mail->Username = 'davif127@gmail.com';  //LOGIN
-    $mail->Password = 'sabedori&1A'; //SENHA
+    $mail->Password = ''; //SENHA
 
     //$mail->SMTPDebug  = 2; 
 
