@@ -37,9 +37,9 @@
     
     </script>
   </head>
-  <body data-spy="scroll" data-target="#navbar" data-offset="25">
+  <body id="index" data-spy="scroll" data-target="#navbar" data-offset="25">
     
-    <section id="index">
+    <section>
         <div class="container section-container">
             <div class="text-center">
                 <img class="logo" src="/Projecta-Novo/img/logo_branca.png"><br>

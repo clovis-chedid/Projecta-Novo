@@ -68,7 +68,7 @@ body.my-login-page {
 
 .my-login-page .card {
 	border-color: transparent;
-	box-shadow: 0 0 40px rgba(0,0,0,.05);
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.335);
 }
 
 .my-login-page .card.fat {

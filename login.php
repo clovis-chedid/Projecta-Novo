@@ -27,7 +27,7 @@
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 
                                 <strong>Erro:</strong> <br><?php if(array_key_exists($_GET['e'], $erros)){ echo $erros[$_GET['e']];}else{ echo 'Erro desconhecido';} ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <button type="button" onclick="window.history.pushState('','','login.php')" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 
@@ -36,7 +36,7 @@
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 
                                 <strong>Sucesso:</strong> <br><?php if(array_key_exists($_GET['s'], $erros)){ echo $sucesso[$_GET['s']];}else{ echo 'Erro desconhecido';} ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <button type="button" onclick="window.history.pushState('','','login.php')" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 
